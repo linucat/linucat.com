@@ -1,0 +1,177 @@
+baseURL: "https://linucat.com" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+title: Linucat Dev Notes
+paginate: 5
+theme: PaperMod
+
+enableInlineShortcodes: true
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+pygmentsUseClasses: true
+# googleAnalytics: UA-123-45
+
+minify:
+    disableXML: true
+    # minifyOutput: true
+
+languages:
+    en:
+        languageName: "Home"
+        weight: 1
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        menu:
+            main:
+                - name: Search
+                  url: search/
+                  weight: 10
+                - name: Categories
+                  url: categories/
+                  weight: 20
+                - name: Tags
+                  url: tags/
+                  weight: 30
+                - name: Archive
+                  url: archives
+                  weight: 40
+                - name: Github
+                  url: https://github.com/linucat/
+                  weight: 50
+                - name: Projects
+                  url: categories/projects/
+                  weight: 45
+
+    about-me:
+        languageName: "😼"
+        languageAltTitle: About Me
+        weight: 2
+        title: About Me
+        taxonomies:
+          category: categories
+          tag: tags
+          series: series
+        profileMode:
+            enabled: true
+            title: linucat
+            imageUrl: "https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/1f317.svg"
+            imageTitle: ProfileMode image
+            # imageWidth: 120
+            # imageHeight: 120
+            subtitle: "☄️ Fast | ☁️ Fluent | 🌙 Smooth | 📱 Responsive"
+            buttons:
+                - name: Blog
+                  url: ../posts
+                - name: Profile Mode
+                  url: https://github.com/linucat
+        menu:
+            main:
+                - name: Search
+                  url: ../search/
+                  weight: 10
+                - name: Categories
+                  url: ../categories/
+                  weight: 20
+                - name: Tags
+                  url: ../tags/
+                  weight: 30
+                - name: Archive
+                  url: ../archives
+                  weight: 40
+                - name: Github
+                  url: https://github.com/linucat/
+                  weight: 50
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+
+params:
+    env: production # to enable google analytics, opengraph, twitter-cards and schema.
+    description: "My dev journey notes and cheatsheets"
+    author: linucat
+    # author: ["Me", "You"] # multiple authors
+
+    defaultTheme: auto
+    # disableThemeToggle: true
+    ShowShareButtons: true
+    ShowReadingTime: true
+    # disableSpecial1stPost: true
+    displayFullLangName: true
+    ShowPostNavLinks: true
+    ShowBreadCrumbs: true
+    ShowCodeCopyButtons: true
+    ShowRssButtonInSectionTermList: true
+    ShowToc: true
+    # comments: false
+    images: ["papermod-cover.png"]
+
+    profileMode:
+        enabled: false
+        title: linucat
+        imageUrl: "#"
+        imageTitle: my image
+        # imageWidth: 120
+        # imageHeight: 120
+        buttons:
+            - name: Archives
+              url: archives
+            - name: Tags
+              url: tags
+
+    homeInfoParams:
+        Title: "linucat"
+        Content: >
+            Welcome to linucat dev blog.
+
+            - This website contains all my dev journey notes and cheatsheet
+            
+            - Do give a 🌟 on Github !
+
+
+    socialIcons:
+        - name: github
+          url: "https://github.com/linucat"
+        - name: KoFi
+          url: "https://linucat.com"
+        - name: Rss
+          url: "index.xml"
+
+    assets:
+        disableHLJS: true
+
+markup:
+    goldmark:
+        renderer:
+            unsafe: true
+    highlight:
+        noClasses: false
+
+privacy:
+    vimeo:
+        disabled: false
+        simple: true
+
+    twitter:
+        disabled: false
+        enableDNT: true
+        simple: true
+
+    instagram:
+        disabled: false
+        simple: true
+
+    youtube:
+        disabled: false
+        privacyEnhanced: true
+
+services:
+    instagram:
+        disableInlineCSS: true
+    twitter:
+        disableInlineCSS: true
